@@ -1,4 +1,15 @@
+body {
+  background: #eee;
+  margin: 0;
+}
+
+.container {
+  margin: 25px;
+}
+
 header {
+  background: #fff;
+  padding: 0 25px;
   display: flex;
   height: 5.938rem;
 
@@ -15,5 +26,16 @@ header {
     margin-left: 2.563rem;
     text-decoration: none;
     color: #000;
+  }
+}
+
+.bookList {
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 10px;
+    border: solid #ddd 1px;
+    background: #fff;
   }
 }
