@@ -4,7 +4,7 @@ import BookElement from './SingleBook';
 const Books = () => (
   <div>
     <ul className="bookList">
-      <BookElement />
+      <BookElement title="Book Title" author="Author Name" />
     </ul>
     <form className="addBook">
       <h2>ADD NEW BOOK</h2>
