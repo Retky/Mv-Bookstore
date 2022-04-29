@@ -57,12 +57,12 @@ header {
   }
 }
 
-.progress{
+.progress {
   margin-left: auto;
   margin-right: 50px;
   display: flex;
   align-items: center;
-  gap:15px;
+  gap: 15px;
 
   p {
     margin: 0;
@@ -96,15 +96,15 @@ header {
 
 .bookInfo {
   padding-left: 25px;
-  border-left:  solid #ddd 1px;
+  border-left: solid #ddd 1px;
 
   small {
     color: #6f6f6f;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   p {
-    margin-top: 0
+    margin-top: 0;
   }
 }
 
