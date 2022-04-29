@@ -15,6 +15,7 @@ header {
 
   h1 {
     margin: auto 0;
+    color: #0088de;
   }
 }
 
@@ -29,13 +30,84 @@ header {
   }
 }
 
+.logIn {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .bookList {
   padding: 0;
   list-style: none;
+}
+
+.bookElement {
+  padding: 10px 30px;
+  border: solid #ddd 1px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    margin: 0;
+  }
+
+  small {
+    color: #4e9fc7;
+  }
+}
+
+.progress{
+  margin-left: auto;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  gap:15px;
+
+  p {
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+
+.bookEdit {
+  display: flex;
+  list-style: none;
+  padding: 10px 0 0;
 
   li {
-    padding: 10px;
-    border: solid #ddd 1px;
-    background: #fff;
+    padding: 0 8px;
+    border-right: solid #ddd 2px;
+    color: #54acd7;
   }
+
+  li:first-of-type {
+    padding-left: 0;
+  }
+
+  li:last-of-type {
+    border-right: none;
+  }
+
+  li:hover {
+    cursor: pointer;
+  }
+}
+
+.bookInfo {
+  padding-left: 25px;
+  border-left:  solid #ddd 1px;
+
+  small {
+    color: #6f6f6f;
+    font-size: .75rem;
+  }
+
+  p {
+    margin-top: 0
+  }
+}
+
+.addBook {
+  border-top: solid #ccc 1px;
 }
