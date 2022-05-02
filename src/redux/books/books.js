@@ -2,20 +2,22 @@ const ADDBOOK = 'ADDBOOK';
 const REMOVEBOOK = 'REMOVEBOOK';
 const initialState = [];
 
-const addBook = () => ({
+export const addBook = (title) => ({
   type: ADDBOOK,
+  book: { title },
 });
 
-const removeBook = () => ({
+export const removeBook = (id) => ({
   type: REMOVEBOOK,
+  book: id,
 });
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADDBOOK:
-      return state;
+      return [...state, action.book];
     case REMOVEBOOK:
-      return state;
+      return state.filter((book, index) => index !== action.book);
     default:
       return state;
   }
