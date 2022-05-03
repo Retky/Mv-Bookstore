@@ -17,13 +17,13 @@ const BookElement = (props) => {
       <div className="progress">
         <div>O</div>
         <div>
-          <p>64%</p>
+          <p>0%</p>
           <small>Completed</small>
         </div>
       </div>
       <div className="bookInfo">
         <small>CURRENT CHAPTER</small>
-        <p>Chapter 17</p>
+        <p>Chapter 1</p>
         <button type="button">UPDATE PROGRESS</button>
       </div>
     </li>
