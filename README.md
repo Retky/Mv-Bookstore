@@ -1,4 +1,4 @@
-# Mv-MathMagicians
+# Mv-Bookstore
 > Single Page Application for a book store website.
 
 ## Live Preview
@@ -23,7 +23,7 @@ If you haven't yet, you should first [set up Git.](https://docs.github.com/en/ge
   - Change the current working directory to the location where you want the cloned directory
   - Type
   ```
-  git clone https://github.com/Retky/Mv-MathMagicians.git mv-mathmagicians
+  git clone https://github.com/Retky/Mv-Bookstore.git mv-bookstore
   ```
   - Press Enter. Your local clone will be created
 - Install dependencies
