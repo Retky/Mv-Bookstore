@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BookElement = (props) => {
-  const { title, author } = props;
+  const { title, author, id } = props;
+
+  const removeHandler = (e) => {
+    console.log(e.target.id);
+  };
+
   return (
     <li className="bookElement">
       <div>
@@ -10,7 +15,7 @@ const BookElement = (props) => {
         <small>{author}</small>
         <ul className="bookEdit">
           <li>Comments</li>
-          <li>Remove</li>
+          <li><button id={id} type="button" onClick={removeHandler}>Remove</button></li>
           <li>Edit</li>
         </ul>
       </div>
@@ -33,6 +38,7 @@ const BookElement = (props) => {
 BookElement.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default BookElement;
