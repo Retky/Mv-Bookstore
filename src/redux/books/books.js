@@ -1,5 +1,5 @@
-const ADDBOOK = 'ADDBOOK';
-const REMOVEBOOK = 'REMOVEBOOK';
+const ADDBOOK = 'bookstore/books/ADDBOOK';
+const REMOVEBOOK = 'bookstore/books/REMOVEBOOK';
 const initialState = [];
 
 export const addBook = (title) => ({
