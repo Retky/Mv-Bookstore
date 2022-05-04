@@ -24,6 +24,19 @@ const apiAddBook = async (id, title, author) => {
   (await add.text());
 };
 
+const apiRemoveBook = async (id) => {
+  const remove = await fetch(`${api}/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  (await remove.text());
+};
+
 export const addBook = (title, author) => (async (dispatch) => {
   const id = uuidv4();
   await apiAddBook(id, title, author);
@@ -33,9 +46,12 @@ export const addBook = (title, author) => (async (dispatch) => {
   });
 });
 
-export const removeBook = (id) => ({
-  type: REMOVEBOOK,
-  id,
+export const removeBook = (id) => (async (dispatch) => {
+  await apiRemoveBook(id);
+  dispatch({
+    type: REMOVEBOOK,
+    id,
+  });
 });
 
 const reducer = (state = initialState, action) => {
