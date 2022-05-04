@@ -1,12 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
 
 const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GGI7t3uPhMwUj8R3YHDl/books';
+const FETCHBOOKS = 'bookstore/books/FETCHBOOKS';
 const ADDBOOK = 'bookstore/books/ADDBOOK';
 const REMOVEBOOK = 'bookstore/books/REMOVEBOOK';
-const initialState = [
-  { id: '001', title: 'Luna', author: 'Rony' },
-  { id: '002', title: 'One Stept Ahead', author: 'David Sally' },
-];
+const initialState = [];
 
 const apiAddBook = async (id, title, author) => {
   const add = await fetch(api, {
@@ -37,6 +35,33 @@ const apiRemoveBook = async (id) => {
   (await remove.text());
 };
 
+//
+const apiFetchBooks = async () => {
+  const response = await fetch(api, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const booksList = await response.json();
+  const newState = Object.keys(booksList).map((id) => ({
+    id,
+    title: booksList[id][0].title,
+    author: booksList[id][0].author,
+  }));
+
+  return newState;
+};
+
+export const fetchBooks = () => (async (dispatch) => {
+  const books = await apiFetchBooks();
+  dispatch({
+    type: FETCHBOOKS,
+    newState: books,
+  });
+});
+//
+
 export const addBook = (title, author) => (async (dispatch) => {
   const id = uuidv4();
   await apiAddBook(id, title, author);
@@ -60,6 +85,8 @@ const reducer = (state = initialState, action) => {
       return [...state, action.book];
     case REMOVEBOOK:
       return state.filter((book) => book.id !== action.id);
+    case FETCHBOOKS:
+      return action.newState;
     default:
       return state;
   }
