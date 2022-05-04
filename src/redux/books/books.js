@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GGI7t3uPhMwUj8R3YHDl/books';
 const ADDBOOK = 'bookstore/books/ADDBOOK';
 const REMOVEBOOK = 'bookstore/books/REMOVEBOOK';
 const initialState = [
@@ -7,9 +8,29 @@ const initialState = [
   { id: '002', title: 'One Stept Ahead', author: 'David Sally' },
 ];
 
-export const addBook = (title, author) => ({
-  type: ADDBOOK,
-  book: { id: uuidv4(), title, author },
+const apiAddBook = async (id, title, author) => {
+  const add = await fetch(api, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+      title,
+      author,
+      category: 'unsorted',
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  (await add.text());
+};
+
+export const addBook = (title, author) => (async (dispatch) => {
+  const id = uuidv4();
+  await apiAddBook(id, title, author);
+  dispatch({
+    type: ADDBOOK,
+    book: { id, title, author },
+  });
 });
 
 export const removeBook = (id) => ({
