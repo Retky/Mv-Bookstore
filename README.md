@@ -1,8 +1,12 @@
 # Mv-Bookstore
 > Single Page Application for a book store website.
 
+## Preview
+
+
 ## Live Preview
 [Netlify](https://mv-bookstore.netlify.app/)
+[![image](https://user-images.githubusercontent.com/93499010/167004968-fab486f8-834d-4248-adbd-e12d84a4aa7d.png)](https://mv-bookstore.netlify.app/)
 
 ## Built With
 
