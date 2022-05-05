@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
@@ -24,7 +26,7 @@ const BookElement = (props) => {
         </ul>
       </div>
       <div className="progress">
-        <div>O</div>
+        <div><FontAwesomeIcon icon={faCircle} size="4x" className="load" /></div>
         <div>
           <p>0%</p>
           <small>Completed</small>
