@@ -14,6 +14,7 @@ const BookElement = (props) => {
   return (
     <li className="bookElement">
       <div>
+        <p className="category">Unsorted</p>
         <h3>{title}</h3>
         <small>{author}</small>
         <ul className="bookEdit">
